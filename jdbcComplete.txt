@@ -1,0 +1,299 @@
+//package javaapplication2;
+import java.sql.DriverManager;
+import java.sql.Connection;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.sql.ResultSet;
+import java.util.Scanner;
+/**
+ *
+ * @author saurabh
+ */
+public class Db {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String a[]) {
+        // TODO code application logic here
+        System.out.println("-------- PostgreSQL "
+   + "JDBC Connection Testing ------------");
+        Scanner sc=new Scanner(System.in);
+        String username1=sc.next();
+        String Password1=sc.next();
+       // System.out.println(username1+ " "+Password1);
+ try {
+
+  Class.forName("org.postgresql.Driver");
+
+ } catch (ClassNotFoundException e) {
+
+  System.out.println("Where is your PostgreSQL JDBC Driver? "
+    + "Include in your library path!");
+  e.printStackTrace();
+  return;
+
+ }
+
+ System.out.println("PostgreSQL JDBC Driver Registered!");
+
+ Connection connection = null;
+
+//  try {
+//
+//   connection = DriverManager.getConnection(
+//     "jdbc:postgresql://localhost:5432/BookStore", "postgres",
+//     "123456");
+//
+//  } catch (SQLException e) {
+//
+//   System.out.println("Connection Failed! Check output console");
+//   e.printStackTrace();
+//   return;
+//
+//  }
+//
+//  if (connection != null) {
+//   System.out.println("You made it, take control your database now!");
+//  } else {
+//   System.out.println("Failed to make connection!");
+//  }
+//                try
+//                {
+//                    Statement stmt=connection.createStatement();
+//                  
+//                    //String query="insert into login values('"+username1+"','"+Password1+"')";
+//                    //stmt.executeUpdate(query);
+//                    
+//                     String query1="select first_name, last_name, Bestselling from author";
+//                    ResultSet rs=stmt.executeQuery(query1);
+//                    
+//                    while(rs.next())
+//                    {
+//                        String username=rs.getString("first_name");
+//                        String pass=rs.getString("last_name");
+//                        System.out.println("Username:"+username+"\t password:"+pass+"\n");
+//                    }
+//                    
+//                  
+//                    stmt.close();
+//                    connection.close();
+//                }
+//                catch(Exception e){e.printStackTrace();}
+//////////////////////////////////////////////////////////////////  
+//  
+//  try {
+//
+//   connection = DriverManager.getConnection(
+//     "jdbc:postgresql://localhost:5432/BookStore", "postgres",
+//     "123456");
+//
+//  } catch (SQLException e) {
+//
+//   System.out.println("Connection Failed! Check output console");
+//   e.printStackTrace();
+//   return;
+//
+//  }
+//
+//  if (connection != null) {
+//   System.out.println("You made it, take control your database now!");
+//  } else {
+//   System.out.println("Failed to make connection!");
+//  }
+//                try
+//                {
+//                    Statement stmt=connection.createStatement();
+//                  
+//                    //String query="insert into login values('"+username1+"','"+Password1+"')";
+//                    //stmt.executeUpdate(query);
+//                    
+//                     String query1="select first_name, last_name, book_name from person , books  where id= author_id AND gender='Female' ";
+//                     ResultSet rs =stmt.executeQuery(query1);
+//                    
+//                    while(rs.next())
+//                    {
+//                        String name=rs.getString("first_name");
+//                        String lname=rs.getString("last_name");
+//                        String book=rs.getString("book_name");
+//                        System.out.println("firstname:"+name+"\t lname:"+lname+"\n"+"Bookname"+book);
+//                    }
+//                    
+//                  
+//                    stmt.close();
+//                    connection.close();
+//                }
+//                catch(Exception e){e.printStackTrace();}
+/////////////////////////////////////////////////////////////
+//  try {
+//
+//   connection = DriverManager.getConnection(
+//     "jdbc:postgresql://localhost:5432/BookStore", "postgres",
+//     "123456");
+//
+//  } catch (SQLException e) {
+//
+//   System.out.println("Connection Failed! Check output console");
+//   e.printStackTrace();
+//   return;
+//
+//  }
+//
+//  if (connection != null) {
+//   System.out.println("You made it, take control your database now!");
+//  } else {
+//   System.out.println("Failed to make connection!");
+//  }
+//                try
+//                {
+//                    Statement stmt=connection.createStatement();
+//                  
+//                    //String query="insert into login values('"+username1+"','"+Password1+"')";
+//                    //stmt.executeUpdate(query);
+//                    
+//                     String query1="select Pages from Books where book_name='Database Management System' ";
+//                     ResultSet rs =stmt.executeQuery(query1);
+//                    
+//                    while(rs.next())
+//                    {
+//                        String pages=rs.getString("Pages");
+////                        String lname=rs.getString("last_name");
+////                        String book=rs.getString("book_name");
+//                        System.out.println("No of pages:"+pages);
+//                    }
+//                    
+//                  
+//                    stmt.close();
+//                    connection.close();
+//                }
+//                catch(Exception e){e.printStackTrace();}
+////////////////////////////////////////////////////////////
+//  try {
+//
+//   connection = DriverManager.getConnection(
+//     "jdbc:postgresql://localhost:5432/BookStore", "postgres",
+//     "123456");
+//
+//  } catch (SQLException e) {
+//
+//   System.out.println("Connection Failed! Check output console");
+//   e.printStackTrace();
+//   return;
+//
+//  }
+//
+//  if (connection != null) {
+//   System.out.println("You made it, take control your database now!");
+//  } else {
+//   System.out.println("Failed to make connection!");
+//  }
+//                try
+//                {
+//                    Statement stmt=connection.createStatement();
+//                  
+//                    //String query="insert into login values('"+username1+"','"+Password1+"')";
+//                    //stmt.executeUpdate(query);
+//                    
+//                     String query1="select first_name,last_name, address from person , Reader where id= reader_id AND rating > 4 ";
+//                     ResultSet rs =stmt.executeQuery(query1);
+//                    
+//                    while(rs.next())
+//                    {
+//                        String name=rs.getString("first_name");
+//                        String lname=rs.getString("last_name");
+//                        String add=rs.getString("address");
+//                        System.out.println("firstname:"+name+"\t lname:"+lname+"\n"+"Address"+add);
+//                    }
+//                    
+//                  
+//                    stmt.close();
+//                    connection.close();
+//                }
+//                catch(Exception e){e.printStackTrace();}
+/////////////////////////////////////////////////////////////////
+//  try {
+//
+//   connection = DriverManager.getConnection(
+//     "jdbc:postgresql://localhost:5432/BookStore", "postgres",
+//     "123456");
+//
+//  } catch (SQLException e) {
+//
+//   System.out.println("Connection Failed! Check output console");
+//   e.printStackTrace();
+//   return;
+//
+//  }
+//
+//  if (connection != null) {
+//   System.out.println("You made it, take control your database now!");
+//  } else {
+//   System.out.println("Failed to make connection!");
+//  }
+//                try
+//                {
+//                    Statement stmt=connection.createStatement();
+//                  
+//                    //String query="insert into login values('"+username1+"','"+Password1+"')";
+//                    //stmt.executeUpdate(query);
+//                    
+//                     String query1="select binding from person, books where id=author_id AND gender='Male'";
+//                     ResultSet rs =stmt.executeQuery(query1);
+//                    
+//                    while(rs.next())
+//                    {
+//                        String bind=rs.getString("binding");
+//        
+//                        System.out.println("Binding Type:"+bind);
+//                    }
+//                    
+//                  
+//                    stmt.close();
+//                    connection.close();
+//                }
+//                catch(Exception e){e.printStackTrace();}
+/////////////////////////////////////////////////////////////////
+ try {
+
+  connection = DriverManager.getConnection(
+    "jdbc:postgresql://localhost:5432/BookStore", "postgres",
+    "123456");
+
+ } catch (SQLException e) {
+
+  System.out.println("Connection Failed! Check output console");
+  e.printStackTrace();
+  return;
+
+ }
+
+ if (connection != null) {
+  System.out.println("You made it, take control your database now!");
+ } else {
+  System.out.println("Failed to make connection!");
+ }
+                try
+                {
+                    Statement stmt=connection.createStatement();
+                   
+                    //String query="insert into login values('"+username1+"','"+Password1+"')";
+                    //stmt.executeUpdate(query);
+                   
+                     String query1="select address from books, person where author_id=id AND publisher='TMH Publication'";
+                     ResultSet rs =stmt.executeQuery(query1);
+                   
+                    while(rs.next())
+                    {
+                        String add=rs.getString("address");
+       
+                        System.out.println("Address:"+add);
+                    }
+                   
+                   
+                    stmt.close();
+                    connection.close();
+                }
+                catch(Exception e){e.printStackTrace();}
+    }            
+   
+}
